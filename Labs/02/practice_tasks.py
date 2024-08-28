@@ -20,6 +20,26 @@ def show_info(**details):
     for detail in details:
         output += f"{detail}: {details[detail]}\n"
     return output
+
+# string tasks
+# task 1
+def user_help():
+    user_name = input("your good name!\n")
+    print("Hello!", user_name)
+    choice = input("I hope you are fine, let me know how I can help you!\n")
+
+    if choice == "yes":
+        problem = input("share your problem with us\n")
+        print("Thanks for your feedback, we will resolve your problem")
+        
+    print("Okay! Good to see you, stay connected".center(50))
+user_help()
+
+# task 2
+def get_first_last_name(full_name):
+    separated_name = full_name.split(' ')
+    return separated_name[0] + " " + separated_name[-1]
+print(get_first_last_name("Fasih Hasan Khan"))
     
 # output 1
 print(calculate_area(8, 1000/11), calculate_area(3, 23))
