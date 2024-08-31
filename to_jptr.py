@@ -20,6 +20,8 @@ class Config:
             self._config = dict(config_data)
             with open(self._config_file, 'w') as f:
                 f.write('\n'.join([f"{data[0]}={data[1]}" for data in config_data]))
+            with open('.gitignore', 'a') as f:
+                f.write(f"\n{self._config_file}")
         else:
             with open(self._config_file, 'r') as f:
                 self._config = dict(map(lambda x: x.split('='), f.read().rstrip().split('\n')))
@@ -56,7 +58,6 @@ class Config:
                 print("Invalid regex")
                 continue
             break
-
 
         return [
             ('labs_path', labs_path),
