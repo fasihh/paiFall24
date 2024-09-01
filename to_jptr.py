@@ -122,8 +122,11 @@ def main() -> None:
         print("Usage: py to_jptr.py <lab_number>\nExample: python to_jptr.py 1")
         print("\nAlso make sure this script is in the base directory", end='')
         exit()
-
-    Converter(sys.argv[1], Config('jptr_config.ini'))
+    
+    try:
+        Converter(sys.argv[1], Config('jptr_config.ini'))
+    except Exception as error:
+        print(error)
 
 if __name__ == '__main__':
     main()
