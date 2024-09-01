@@ -1,4 +1,4 @@
-import os, sys, re, fnmatch as fm, nbformat as nbf
+import os, sys, re, nbformat as nbf
 
 class Config:
     def __init__(self, config_file: str):
@@ -83,10 +83,18 @@ class Converter:
         self._lab_dir: str = ""
         self._files_content: list[tuple[str, str]] = []
         self._run()
+    
+    def _filter(self, data: list[str], pattern) -> list[str]:
+        filtered_files = []
+        for file in data:
+            if re.search(pattern, file):
+                filtered_files.append(file)
+        return filtered_files
+
 
     def _set_lab_dir(self) -> None:
         for _, dirs, _ in os.walk(self._config['labs_path']):
-            for i, dir in enumerate(fm.filter(dirs, self._config['sub_labs_regex'])):
+            for i, dir in enumerate(self._filter(dirs, self._config['sub_labs_regex'])):
                 if int(self._lab_no)-1 != i:
                     continue
                 self._lab_dir = os.path.join(self._config['labs_path'], dir)
@@ -113,7 +121,7 @@ class Converter:
     def _run(self) -> None:
         self._set_lab_dir()
         for _, _, files in os.walk(self._lab_dir):
-            for file in fm.filter(files, self._config['file_regex']):
+            for file in self._filter(files, self._config['file_regex']):
                 self._files_content.append((file, self._read_file(file)))
         self._create_notebook()
 
