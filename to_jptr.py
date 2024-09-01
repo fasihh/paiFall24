@@ -1,4 +1,4 @@
-import os, sys, re, fnmatch as fm, nbformat as nbf, argparse
+import os, sys, re, fnmatch as fm, nbformat as nbf
 
 class Config:
     def __init__(self, config_file: str):
