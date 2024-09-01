@@ -1,4 +1,5 @@
-import os, sys, re, nbformat as nbf
+import os, sys, re
+import nbformat as nbf
 
 class Config:
     def __init__(self, config_file: str):
