@@ -16,8 +16,10 @@ def add_grade(student, grade):
     
 def get_student_average(student):
     grades = students[student]
-    # using sum instead of adding manually
-    return sum(grades)/len(grades)
+    total = 0
+    for grade in grades:
+        total += grade
+    return total/len(grades)
 
 def remove_student(student):
     if student in students:
