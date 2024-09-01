@@ -58,17 +58,26 @@ class Config:
                 print("Invalid regex")
                 continue
             break
+        
+        print("Enter your student ID.")
+        while True:
+            student_id = input(">> ")
+            if not re.match(r'\d\d[K,k]\d\d\d\d', student_id):
+                print("Invalid student ID")
+                continue
+            break
+    
 
         return [
             ('labs_path', labs_path),
             ('sub_labs_regex', sub_labs_regex),
-            ('file_regex', file_regex + '.py')
+            ('file_regex', file_regex + '.py'),
+            ('student_id', student_id)
         ]
 
 
 class Converter:
-    def __init__(self, std_id: str, lab_no: str, config: Config):
-        self._std_id: str = std_id
+    def __init__(self, lab_no: str, config: Config):
         self._lab_no: str = lab_no
         self._config: Config = config
         self._lab_dir: str = ""
@@ -96,7 +105,7 @@ class Converter:
             notebook.cells.append(nbf.v4.new_markdown_cell(f"### {file_name.split('.')[0]}"))
             notebook.cells.append(nbf.v4.new_code_cell(content))
 
-        output_file = os.path.join(self._lab_dir, f"{self._std_id}_{self._lab_no:0>2}.ipynb")
+        output_file = os.path.join(self._lab_dir, f"{self._config['student_id']}_{self._lab_no:0>2}.ipynb")
         with open(output_file, 'w') as f:
             nbf.write(notebook, f)
         print(f"Created notebook: {output_file}")
@@ -109,18 +118,12 @@ class Converter:
         self._create_notebook()
 
 def main() -> None:
-    if len(sys.argv)-1 < 2:
-        print("Usage: py to_jptr.py <student_id> <lab_number>\nExample: python to_jptr.py 23K0727 1")
+    if len(sys.argv)-1 < 1:
+        print("Usage: py to_jptr.py <lab_number>\nExample: python to_jptr.py 1")
         print("\nAlso make sure this script is in the base directory", end='')
         exit()
 
-    __, std_id, lab_no = sys.argv
-
-    if not re.match(r'\d\d[K,k]\d\d\d\d', std_id):
-        print("Invalid student ID")
-        exit()
-
-    Converter(std_id, lab_no, Config('jptr_config.ini'))
+    Converter(sys.argv[1], Config('jptr_config.ini'))
 
 if __name__ == '__main__':
     main()
