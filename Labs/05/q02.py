@@ -1,9 +1,5 @@
 from abc import ABC, abstractmethod
 
-# Create abstract base class "shape" that has abstract method "area". Inherit rectangle,
-# triangle and square class from shape class and provide implementation of "area" method
-# for each derived class. Finally print area of rectangle, triangle and square.
-
 class Shape(ABC):
     @abstractmethod
     def area(self):
