@@ -1,15 +1,16 @@
 import re
 
 email_addresses = [
-    'fhk@gmail.com',
-    'raghib@yahoo.com',
-    'retarded.absergmail.com',
-    '@@@gmail@gmail.com',
+    'fhk.tcs@gmail.com',
+    'owais.@yahoo.com',
+    'absergmail.com',
+    'ali@nu.edu.pk'
 ]
 
-def match_valid(email):
-    return re.search(r'^[^@][A-Za-z0-9]+@[A-Za-z0-9]+\.[A-Z-a-z]+', email)
+def find_emails(text):
+    return re.finditer(r'\w+(\.\w+)*@\w+(\.\w+)+', text)
 
-for email in email_addresses:
-    if match_valid(email):
-        print(email)
+text = ' '.join(email_addresses)
+print(f"text: {text}")
+for email in find_emails(text):
+    print(text[email.start():email.end()])
