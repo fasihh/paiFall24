@@ -1,0 +1,51 @@
+product_id,product_name,category,price
+1,Peanut Butter & Jelly,Food,3.99
+2,Toothpaste,Personal Care,2.49
+3,Laptop,Electronics,899.99
+4,Running Shoes,Fashion,79.99
+5,LED TV,Electronics,499.99
+6,Organic Milk,Food,4.49
+7,Shampoo,Personal Care,5.99
+8,Cotton T-Shirt,Fashion,12.99
+9,Smartphone,Electronics,699.99
+10,Frozen Pizza,Food,6.99
+11,Blender,Home Appliances,39.99
+12,Chicken Breast,Food,8.99
+13,Denim Jeans,Fashion,45.00
+14,Headphones,Electronics,29.99
+15,Body Lotion,Personal Care,7.49
+16,Desk Chair,Furniture,89.99
+17,Yogurt,Food,2.99
+18,Wireless Mouse,Electronics,24.99
+19,Luxury Watch,Fashion,299.99
+20,Toaster,Home Appliances,19.99
+21,Ground Coffee,Food,9.99
+22,Face Wash,Personal Care,6.49
+23,Gaming Console,Electronics,399.99
+24,Leather Jacket,Fashion,150.00
+25,Rice Cooker,Home Appliances,59.99
+26,Orange Juice,Food,3.49
+27,Electric Toothbrush,Personal Care,29.99
+28,Bluetooth Speaker,Electronics,49.99
+29,Wool Sweater,Fashion,39.99
+30,Vacuum Cleaner,Home Appliances,129.99
+31,Energy Drink,Food,2.49
+32,Deodorant,Personal Care,4.99
+33,Smartwatch,Electronics,199.99
+34,Sneakers,Fashion,59.99
+35,Microwave Oven,Home Appliances,99.99
+36,Protein Bar,Food,1.99
+37,Hair Dryer,Personal Care,19.99
+38,4K Monitor,Electronics,249.99
+39,Sports Jacket,Fashion,89.99
+40,Air Fryer,Home Appliances,79.99
+41,Chocolate Bar,Food,1.49
+42,Hand Soap,Personal Care,3.49
+43,Tablet,Electronics,299.99
+44,Suit,Men's Fashion,250.00
+45,Washing Machine,Home Appliances,499.99
+46,Instant Noodles,Food,0.99
+47,Shaving Cream,Personal Care,4.29
+48,Digital Camera,Electronics,599.99
+49,Casual Dress,Fashion,69.99
+50,Blender Bottle,Home Appliances,12.99
