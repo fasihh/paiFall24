@@ -1,0 +1,3 @@
+average = 49.824
+variance = 847.247024
+standard_deviation = 29.10750803486963
