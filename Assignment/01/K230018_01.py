@@ -9,7 +9,7 @@ class Animal:
         self.__available = available
 
     def info(self):
-        print(f'Availability Status: {'Viewing' if self.__available else 'Quarantine'}')
+        print(f'Availability Status: {"Viewing" if self.__available else "Quarantine"}')
         print(f'Name: {self.__name}')
         print(f'Age: {self.__age}')
         print(f'Habitat: {self.__habitat}')
@@ -24,7 +24,7 @@ class Mammal(Animal):
         print('Mammal:')
         super().info()
         print(f'Fur length: {self.__fur_length}')
-        print(f'Diet: {'Carnivore' if self.__diet else 'Herbivore'}')
+        print(f'Diet: {"Carnivore" if self.__diet else "Herbivore"}')
 
 class Bird(Animal):
     def __init__(self, name: str, age: int, habitat: str, wing_span: int, altitude: int, available: bool = True):
@@ -48,7 +48,7 @@ class Reptile(Animal):
         print('Reptile:')
         super().info()
         print(f'Scale Pattern #: {self.__scale_pattern}')
-        print(f'Venomous Status: {'Venomous' if self.__status else 'Non-venomous'}')
+        print(f'Venomous Status: {"Venomous" if self.__status else "Non-venomous"}')
 
 mammal = Mammal('Mark', 5, 'Forest', 5, True)
 reptile = Reptile('Zuck', 50, 'Swamp', 1, False)
