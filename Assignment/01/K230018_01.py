@@ -1,5 +1,3 @@
-# from abc import ABC, abstractmethod
-
 class Animal:
     def __init__(self, name: str, age: int, habitat: str, available: bool):
         self.__name = name
