@@ -1,0 +1,27 @@
+3 4 # pf
+3 4 # ap
+3 4 # cal
+2 3.33 # fe
+2 3.33 # icp
+1 3.67 # ict
+1 4 # pf-l
+1 3.33 # fe-l
+/
+3 4 # oop
+3 4 # mvc
+3 4 # dld
+2 4 # irs
+2 3.67 # ew
+1 4 # ew-l
+1 4 # oop-l
+1 4 # dld-l
+/
+3 3.67 # pai
+3 4 # dsa
+3 3.67 # dis
+3 4 # la
+2 4 # psy
+2 4 # cw
+1 4 # pai-l
+1 3.33 # dsa-l
+/
